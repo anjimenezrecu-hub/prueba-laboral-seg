@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laboral Seg — Seguridad y Salud Ocupacional para Microempresas</title>
+  <meta name="description" content="Cumple con la normativa de Seguridad y Salud Ocupacional (SSO) en Ecuador. Auditoría Express, planes para microempresas y acompañamiento integral." />
+
+  <!-- Tipografías según preferencia del cliente -->
+  <style>
+    :root{
+      --azul:#003366;           /* título/brand */
+      --celeste:#00AEEF;        /* acentos/CTA */
+      --gris-100:#f6f7fb;       /* fondo suave */
+      --gris-200:#eef0f5;
+      --gris-400:#c9cfdb;
+      --gris-700:#4b5563;
+      --negro:#111827;
+      --blanco:#ffffff;
+      --max:1080px;
+      --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--negro);font-family: Calibri, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;line-height:1.6;background:var(--gris-100)}
+    h1,h2,h3{font-family: Tahoma, Arial Black, Arial, sans-serif;color:var(--azul);line-height:1.2;margin:0 0 .5rem}
+    p{margin:.25rem 0 1rem}
+    a{color:var(--azul)}
+    img{max-width:100%;display:block}
+
+    /* Layout */
+    .container{max-width:var(--max);padding:0 20px;margin:0 auto}
+    .grid{display:grid;gap:20px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.grid-3,.grid-2{grid-template-columns:1fr}}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--gris-200)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .brand__logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--azul), var(--celeste));box-shadow:0 4px 10px rgba(0,0,0,.12)}
+    .brand__name{font-family:Tahoma, Arial Black, Arial, sans-serif;color:var(--azul);font-weight:700;letter-spacing:.2px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--negro);text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--azul)}
+    .nav__cta{display:flex;gap:10px;align-items:center}
+    .btn{appearance:none;border:0;border-radius:12px;padding:12px 16px;background:var(--celeste);color:white;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow);cursor:pointer}
+    .btn--sec{background:transparent;color:var(--azul);border:2px solid var(--azul)}
+    .menu{display:none}
+    @media (max-width:860px){
+      nav ul{display:none}
+      .menu{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--azul);padding:8px 12px;border-radius:10px;background:transparent;color:var(--azul);font-weight:700}
+      .nav.open ul{display:flex;position:absolute;left:0;right:0;top:60px;background:white;border-bottom:1px solid var(--gris-200);padding:12px 20px;flex-direction:column;gap:10px}
+    }
+
+    /* Hero */
+    .hero{padding:56px 0;background:linear-gradient(180deg, #fff, #f8fbff)}
+    .hero__wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+    .hero h1{font-size:clamp(28px,4.2vw,44px)}
+    .hero p{font-size:clamp(16px,2.2vw,18px);color:var(--gris-700)}
+    .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    .hero__card{background:white;border:1px solid var(--gris-200);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero__bullet{display:flex;align-items:center;gap:10px;margin:.25rem 0}
+    .tag{display:inline-block;background:#e6f7ff;color:#026aa7;border:1px solid #bde9ff;padding:4px 10px;border-radius:999px;font-weight:700;font-size:.82rem}
+    @media (max-width:980px){.hero__wrap{grid-template-columns:1fr}}
+
+    /* Section */
+    section{padding:56px 0}
+    .section__head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}
+    .muted{color:var(--gris-700)}
+
+    /* Cards */
+    .card{background:white;border:1px solid var(--gris-200);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin-bottom:8px}
+    .card .price{font-weight:900;font-size:1.35rem;color:var(--azul)}
+    .pill{display:inline-block;border:1px solid var(--gris-400);padding:6px 10px;border-radius:999px;font-size:.9rem}
+    .list{padding-left:1rem;margin:.5rem 0}
+    .list li{margin:.35rem 0}
+
+    /* Steps */
+    .steps{counter-reset:paso;gap:16px}
+    .step{position:relative;padding:18px;border-left:4px solid var(--celeste);background:white;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .step::before{counter-increment:paso;content:counter(paso);position:absolute;left:-16px;top:18px;background:var(--azul);color:white;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;box-shadow:0 4px 10px rgba(0,0,0,.12)}
+
+    /* Testimonios */
+    blockquote{margin:0;padding:0;border:0}
+    .testimonial{background:white;border:1px solid var(--gris-200);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .testimonial footer{margin-top:10px;color:var(--gris-700);font-weight:700}
+
+    /* Contacto */
+    .contact{background:linear-gradient(180deg,#fff,#f5fbff);border-top:1px solid var(--gris-200);border-bottom:1px solid var(--gris-200)}
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:12px 14px;border:1px solid var(--gris-400);border-radius:10px;font:inherit;background:#fff}
+    textarea{min-height:120px;resize:vertical}
+
+    /* Footer */
+    footer{padding:26px 0;color:var(--gris-700)}
+    .footer__grid{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+    /* Helpers */
+    .hide{display:none !important}
+  </style>
+</head>
+<body>
+  <!-- ======= Header ======= -->
+  <header>
+    <div class="container nav" id="top">
+      <a href="#top" class="brand" aria-label="Inicio Laboral Seg">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span class="brand__name">Laboral Seg</span>
+      </a>
+      <nav>
+        <ul id="menu-list">
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="nav__cta">
+        <a class="btn btn--sec" href="#contacto">Cotiza</a>
+        <button class="menu" id="btn-menu" aria-expanded="false" aria-controls="menu-list">Menú ▾</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======= Hero ======= -->
+  <section class="hero">
+    <div class="container hero__wrap">
+      <div>
+        <span class="tag">SSO para Microempresas</span>
+        <h1>Cumple la normativa de Seguridad y Salud Ocupacional <em>sin complicarte</em>.</h1>
+        <p class="muted">Evita sanciones del Ministerio de Trabajo, reduce accidentes y mejora la productividad con planes hechos para microempresas (1–9 empleados).</p>
+        <div class="cta">
+          <a class="btn" id="cta-whatsapp" href="#" data-whatsapp="593000000000" data-msg="Hola, quiero agendar una Auditoría Express para mi microempresa.">💬 Agenda por WhatsApp</a>
+          <a class="btn btn--sec" href="#servicios">Ver planes</a>
+        </div>
+      </div>
+      <div class="hero__card" aria-label="Resumen de beneficios">
+        <h3>¿Por qué Laboral Seg?</h3>
+        <div class="hero__bullet">✅ Cumplimiento legal garantizado</div>
+        <div class="hero__bullet">🧭 Auditoría Express en 7 días</div>
+        <div class="hero__bullet">💼 Planes para microempresa</div>
+        <div class="hero__bullet">📊 Reporte claro con prioridades</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Beneficios ======= -->
+  <section id="beneficios">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Beneficios clave</h2>
+          <p class="muted">Resultados concretos desde el primer mes.</p>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Evita multas</h3>
+          <p class="muted">Actualiza tus obligaciones de SSO y evita sanciones por incumplimiento.</p>
+        </div>
+        <div class="card">
+          <h3>Menos accidentes</h3>
+          <p class="muted">Reduce incidentes con controles, señalización y EPP adecuados.</p>
+        </div>
+        <div class="card">
+          <h3>Productividad</h3>
+          <p class="muted">Ambiente seguro = equipo enfocado y menos ausentismo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Servicios / Planes ======= -->
+  <section id="servicios">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Planes y Servicios</h2>
+          <p class="muted">Elige el plan que más se ajuste a tu operación.</p>
+        </div>
+        <span class="pill">Anexo 1 — Acuerdo MDT-196</span>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card" aria-label="Auditoría Express">
+          <h3>Auditoría Express</h3>
+          <p class="muted">Diagnóstico inicial en <strong>7 días</strong> con lista priorizada de acciones.</p>
+          <ul class="list">
+            <li>Revisión de requisitos mínimos (Anexo 1)</li>
+            <li>Checklist verificable y evidencias</li>
+            <li>Informe con semáforo de cumplimiento</li>
+          </ul>
+          <p class="price">Desde $—</p>
+          <a class="btn" href="#contacto">Solicitar</a>
+        </article>
+
+        <article class="card" aria-label="Plan Básico Microempresa">
+          <h3>Plan Básico Microempresa</h3>
+          <p class="muted">Implementa lo esencial para operar sin riesgos.</p>
+          <ul class="list">
+            <li>Diagnóstico + Plan de acción</li>
+            <li>Capacitación inicial (inducción SSO)</li>
+            <li>Señalética y EPP mínimos recomendados</li>
+          </ul>
+          <p class="price">Desde $—</p>
+          <a class="btn" href="#contacto">Cotizar</a>
+        </article>
+
+        <article class="card" aria-label="Plan Integral">
+          <h3>Plan Integral</h3>
+          <p class="muted">Acompañamiento mensual y evidencias para auditorías.</p>
+          <ul class="list">
+            <li>Capacitaciones programadas</li>
+            <li>Matriz de riesgos y controles</li>
+            <li>Indicadores y reportes gerenciales</li>
+          </ul>
+          <p class="price">Desde $—</p>
+          <a class="btn" href="#contacto">Hablar con asesor</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Proceso ======= -->
+  <section id="proceso">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>¿Cómo funciona?</h2>
+          <p class="muted">Simple, claro y con acompañamiento.</p>
+        </div>
+      </div>
+      <div class="grid steps">
+        <div class="step"><strong>Agenda tu auditoría</strong><br><span class="muted">Cuéntanos tu actividad y número de trabajadores.</span></div>
+        <div class="step"><strong>Recibe el diagnóstico</strong><br><span class="muted">Checklist verificable y plan de acción priorizado.</span></div>
+        <div class="step"><strong>Implementa con nuestro apoyo</strong><br><span class="muted">Capacitaciones, señalización y documentación.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Testimonios / Confianza ======= -->
+  <section>
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Confianza</h2>
+          <p class="muted">Experiencia con microempresas de distintos niveles de riesgo.</p>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <blockquote class="testimonial">
+          “Nos ayudaron a ordenar todo lo de SSO y evitamos una multa.”
+          <footer>— Cliente del sector servicios</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          “Diagnóstico claro y plan realista para nuestra microempresa.”
+          <footer>— Taller de manufactura</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          “La capacitación mejoró el compromiso del equipo.”
+          <footer>— Comercio minorista</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Contacto ======= -->
+  <section id="contacto" class="contact">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Contáctanos</h2>
+          <p class="muted">Agenda tu diagnóstico gratuito y recibe una propuesta.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <form id="form-contacto" aria-label="Formulario de contacto">
+          <input type="text" name="nombre" placeholder="Nombre" required>
+          <input type="text" name="empresa" placeholder="Empresa" required>
+          <input type="email" name="email" placeholder="Correo" required>
+          <input type="tel" name="telefono" placeholder="Teléfono" required>
+          <textarea name="mensaje" placeholder="Cuéntanos tu necesidad (p. ej. Auditoría Express, Plan Básico)" required></textarea>
+          <button class="btn" type="submit">Enviar por WhatsApp</button>
+          <small class="muted">Al enviar, se abrirá WhatsApp con tu mensaje prellenado.</small>
+        </form>
+
+        <div class="card">
+          <h3>Datos de contacto</h3>
+          <p><strong>Correo:</strong> <a href="mailto:contacto@laboralseg.com">contacto@laboralseg.com</a></p>
+          <p><strong>WhatsApp:</strong> <a id="wsp-visible" href="#">+593 000 000 000</a></p>
+          <p><strong>Horario:</strong> Lun–Vie 09:00–18:00</p>
+          <hr>
+          <p class="muted">¿Listo para cumplir con el MDT-196 y operar con seguridad? Estamos para ayudarte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container footer__grid">
+      <div class="brand" aria-label="Laboral Seg">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span class="brand__name">Laboral Seg</span>
+      </div>
+      <div>
+        <small>© 2025 Laboral Seg — Seguridad y Productividad para tu Empresa</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======= JS ======= -->
+  <script>
+    // ====== Menú móvil sencillo
+    const btnMenu = document.getElementById('btn-menu');
+    const navBar = document.querySelector('header .container');
+    btnMenu?.addEventListener('click', () => {
+      const isOpen = navBar.classList.toggle('open');
+      btnMenu.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // ====== WhatsApp CTA principal
+    const wspBtn = document.getElementById('cta-whatsapp');
+    const wspVisible = document.getElementById('wsp-visible');
+
+    // ⚠️ Reemplaza por tu número en formato internacional sin + (Ecuador: 593xxxxxxxxx)
+    const WSP_NUMERO = wspBtn?.dataset.whatsapp || '593000000000';
+
+    const buildWspUrl = (numero, texto) => {
+      const t = encodeURIComponent(texto || 'Hola, quiero más información.');
+      return `https://wa.me/${numero}?text=${t}`;
+    };
+
+    // Asigna enlaces visibles
+    if (wspBtn) {
+      wspBtn.href = buildWspUrl(WSP_NUMERO, wspBtn.dataset.msg);
+    }
+    if (wspVisible) {
+      wspVisible.href = buildWspUrl(WSP_NUMERO, 'Hola, deseo una cotización.');
+      wspVisible.textContent = `+${WSP_NUMERO}`;
+    }
+
+    // ====== Formulario → WhatsApp
+    const form = document.getElementById('form-contacto');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const nombre = fd.get('nombre') || '';
+      const empresa = fd.get('empresa') || '';
+      const email = fd.get('email') || '';
+      const telefono = fd.get('telefono') || '';
+      const mensaje = fd.get('mensaje') || '';
+
+      const texto = `Hola Laboral Seg,%0A%0A`+
+        `Quiero información:%0A`+
+        `• Nombre: ${nombre}%0A`+
+        `• Empresa: ${empresa}%0A`+
+        `• Email: ${email}%0A`+
+        `• Teléfono: ${telefono}%0A`+
+        `• Mensaje: ${mensaje}`;
+
+      window.open(buildWspUrl(WSP_NUMERO, decodeURIComponent(texto)), '_blank');
+    });
+  </script>
+</body>
+</html>
