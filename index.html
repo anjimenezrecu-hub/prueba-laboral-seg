@@ -6,14 +6,10 @@
   <title>Laboral Seg — Seguridad y Salud Ocupacional para Microempresas</title>
   <meta name="description" content="Cumple con la normativa de Seguridad y Salud Ocupacional (SSO) en Ecuador. Auditoría Express, planes para microempresas y acompañamiento integral." />
 
-  <!-- Favicon (usa tu SVG) -->
+  <!-- Favicon -->
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
-  <!-- Fallback opcional a PNG para navegadores antiguos
-  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
-  <link rel="icon" href="assets/favicon-192.png" sizes="192x192" type="image/png" />
-  -->
 
-  <!-- Tipografías según preferencia del cliente -->
+  <!-- Estilos -->
   <style>
 :root{
   --azul:#003366; --celeste:#00AEEF; --gris-100:#f6f7fb; --gris-200:#eef0f5;
@@ -95,14 +91,22 @@ form{display:grid;gap:12px}
 input,textarea{width:100%;padding:12px 14px;border:1px solid var(--gris-400);border-radius:10px;font:inherit;background:#fff}
 textarea{min-height:120px;resize:vertical}
 
+/* Cumplimiento legal */
+.legal{background:#fff;border-top:1px solid var(--gris-200);border-bottom:1px solid var(--gris-200)}
+.legal__grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+.legal__item{background:#fff;border:1px solid var(--gris-200);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.legal__item h3{margin:0 0 .35rem}
+.legal__item .muted{margin:0}
+@media (max-width:900px){.legal__grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.legal__grid{grid-template-columns:1fr}}
+
 /* Footer */
 footer{padding:26px 0;color:var(--gris-700)}
 .footer__grid{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 /* Helpers */
 .hide{display:none !important}
-</style>
-
+  </style>
 </head>
 <body>
   <!-- ======= Header ======= -->
@@ -136,12 +140,9 @@ footer{padding:26px 0;color:var(--gris-700)}
         <p class="muted">Evita sanciones del Ministerio de Trabajo, reduce accidentes y mejora la productividad con planes hechos para microempresas (1–9 empleados).</p>
         <div class="cta">
           <a class="btn" id="cta-whatsapp" href="#" 
-           data-whatsapp="593992551380" 
-           data-msg="Hola, quiero agendar un Diagnóstico para mi microempresa."
-           target="_blank" rel="noopener">
-          💬 Agenda por WhatsApp
-        </a>
-
+             data-whatsapp="593992551380" 
+             data-msg="Hola, quiero agendar un Diagnóstico para mi microempresa."
+             target="_blank" rel="noopener">💬 Agenda por WhatsApp</a>
           <a class="btn btn--sec" href="#servicios">Ver planes</a>
         </div>
       </div>
@@ -189,11 +190,11 @@ footer{padding:26px 0;color:var(--gris-700)}
           <h2>Planes y Servicios</h2>
           <p class="muted">Elige el plan que más se ajuste a tu operación.</p>
         </div>
-        <span class="pill">Anexo 1 — Acuerdo MDT-196</span>
+        <!-- (Se eliminó la pastilla 'Anexo 1 — Acuerdo MDT-196') -->
       </div>
 
       <div class="grid grid-3">
-        <article class="card" aria-label="Auditoría Express">
+        <article class="card" aria-label="Diagnóstico Gratuito">
           <h3>Diagnóstico Gratuito</h3>
           <p class="muted">Diagnóstico inicial <strong>virtual personalizado</strong> con lista priorizada de acciones.</p>
           <ul class="list">
@@ -233,6 +234,50 @@ footer{padding:26px 0;color:var(--gris-700)}
     </div>
   </section>
 
+  <!-- ======= Cumplimiento legal ======= -->
+  <section id="cumplimiento" class="legal">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Cumplimiento legal que alcanzas</h2>
+          <p class="muted">Nuestros entregables y acciones se alinean con la normativa vigente en SSO.</p>
+        </div>
+      </div>
+
+      <div class="legal__grid">
+        <div class="legal__item">
+          <h3>Decreto Ejecutivo 255</h3>
+          <p class="muted">Designación del <strong>Responsable de Seguridad</strong>, organización del sistema de gestión y obligaciones generales del empleador.</p>
+        </div>
+
+        <div class="legal__item">
+          <h3>Acuerdo Ministerial 2024-196</h3>
+          <p class="muted">Criterios de <strong>verificación</strong>, evidencias y <strong>formatos</strong> para auditorías e inspecciones del MDT.</p>
+        </div>
+
+        <div class="legal__item">
+          <h3>Anexo 1 — Requisitos mínimos</h3>
+          <p class="muted">Checklist base para micro y pequeñas empresas: documentación, capacitación, señalización, EPP y gestión de riesgos.</p>
+        </div>
+
+        <div class="legal__item">
+          <h3>Anexo 2 — Evidencias</h3>
+          <p class="muted">Listados y soportes requeridos: actas, registros, certificaciones, evaluaciones médicas y matrices actualizadas.</p>
+        </div>
+
+        <div class="legal__item">
+          <h3>Anexo 3 — Verificación</h3>
+          <p class="muted">Criterios de evaluación y <strong>semáforo de cumplimiento</strong> para auditorías e inspecciones.</p>
+        </div>
+
+        <div class="legal__item">
+          <h3>¿Qué entregamos?</h3>
+          <p class="muted">Diagnóstico + plan de acción, protocolos internos, matriz de riesgos (OIT PYMES), evidencias organizadas y acompañamiento en SUT.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ======= Proceso ======= -->
   <section id="proceso">
     <div class="container">
@@ -250,7 +295,7 @@ footer{padding:26px 0;color:var(--gris-700)}
     </div>
   </section>
 
-  <!-- ======= Testimonios / Confianza ======= -->
+  <!-- ======= Testimonios ======= -->
   <section>
     <div class="container">
       <div class="section__head">
@@ -299,7 +344,7 @@ footer{padding:26px 0;color:var(--gris-700)}
         <div class="card">
           <h3>Datos de contacto</h3>
           <p><strong>Correo:</strong> <a href="mailto:laboralsegseguridad@gmail.com">laboralsegseguridad@gmail.com</a></p>
-          <p><strong>WhatsApp:</strong><a id="wsp-visible" href="#" target="_blank" rel="noopener">+593 99 255 1380</a></p>
+          <p><strong>WhatsApp:</strong> <a id="wsp-visible" href="#" target="_blank" rel="noopener">+593 99 255 1380</a></p>
           <p><strong>Horario:</strong> Lun–Vie 09:00–18:00</p>
           <hr>
           <p class="muted">¿Listo para cumplir con la Normativa Ecuatoriana 🇪🇨 y operar con seguridad? Estamos para ayudarte.</p>
@@ -323,7 +368,7 @@ footer{padding:26px 0;color:var(--gris-700)}
 
   <!-- ======= JS ======= -->
   <script>
-    // ====== Menú móvil sencillo
+    // Menú móvil
     const btnMenu = document.getElementById('btn-menu');
     const navBar = document.querySelector('header .container');
     btnMenu?.addEventListener('click', () => {
@@ -331,11 +376,11 @@ footer{padding:26px 0;color:var(--gris-700)}
       btnMenu.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    // ====== WhatsApp CTA principal
+    // WhatsApp CTA
     const wspBtn = document.getElementById('cta-whatsapp');
     const wspVisible = document.getElementById('wsp-visible');
 
-    // ⚠️ Reemplaza por tu número en formato internacional sin + (Ecuador: 593xxxxxxxxx)
+    // Número fijo por data-attr o fallback
     const WSP_NUMERO = wspBtn?.dataset.whatsapp || '593992551380';
 
     const buildWspUrl = (numero, texto) => {
@@ -343,16 +388,16 @@ footer{padding:26px 0;color:var(--gris-700)}
       return `https://wa.me/${numero}?text=${t}`;
     };
 
-    // Asigna enlaces visibles
     if (wspBtn) {
       wspBtn.href = buildWspUrl(WSP_NUMERO, wspBtn.dataset.msg);
     }
     if (wspVisible) {
       wspVisible.href = buildWspUrl(WSP_NUMERO, 'Hola, deseo una cotización.');
+      // Si prefieres mantener espacios en el texto visible, comenta la línea siguiente:
       wspVisible.textContent = `+${WSP_NUMERO}`;
     }
 
-    // ====== Formulario → WhatsApp
+    // Formulario → WhatsApp
     const form = document.getElementById('form-contacto');
     form?.addEventListener('submit', (e) => {
       e.preventDefault();
