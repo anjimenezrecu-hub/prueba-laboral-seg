@@ -202,14 +202,13 @@ footer{padding:26px 0;color:var(--gris-700)}
           <h3>Plan Básico Microempresa</h3>
           <p class="muted">Implementa lo <strong>esencial</strong> para operar sin riesgos.</p>
           <ul class="list">
-            <li>Registro del <strong>Responsable de Seguridad</strong> avalado por el Ministerio de Trabajo según D.E. 255 </li>
+            <li>Registro del <strong>Responsable de Seguridad</strong> avalado por el Ministerio de Trabajo según D.E. 255</li>
             <li><strong>Plan de Prevención de Riesgos Laborales</strong> para empresas pequeñas (1-10 trabajadores)</li>
-            <li>Seguimiento mensual</li>
+            <li>Protocolo Interno de Prevención y Erradicación de la Discriminación, Violencia y Acoso Laboral</li>
             <li>Identificación de peligros y evaluación de riesgos con <strong>Metodología OIT para PYMES</strong></li>
-            <li>Documentación básica actualizada según <strong>Anexo 1</strong>.</li>
-            <li>Regularización del <strong>SUT</strong></li>
+            <li>Documentación básica actualizada según <strong>Anexo 1</strong>, regularización del <strong>SUT</strong> y seguimiento mensual.</li>
           </ul>
-          <p class="price">Cumplir cuesta pocom, incumplir es caro</p>
+          <p class="price">La prevención no es un gasto, es tu mejor inversión</p>
           <a class="btn" href="#contacto">Cotiza ahora</a>
         </article>
 
@@ -289,16 +288,15 @@ footer{padding:26px 0;color:var(--gris-700)}
           <input type="tel" name="telefono" placeholder="Teléfono" required>
           <textarea name="mensaje" placeholder="Cuéntanos tu necesidad (p. ej. Auditoría Express, Plan Básico)" required></textarea>
           <button class="btn" type="submit">Enviar por WhatsApp</button>
-          <small class="muted">Al enviar, se abrirá WhatsApp con tu mensaje prellenado.</small>
         </form>
 
         <div class="card">
           <h3>Datos de contacto</h3>
-          <p><strong>Correo:</strong> <a href="mailto:contacto@laboralseg.com">contacto@laboralseg.com</a></p>
-          <p><strong>WhatsApp:</strong> <a id="wsp-visible" href="#">+593 000 000 000</a></p>
+          <p><strong>Correo:</strong> <a href="mailto:contacto@laboralseg.com">laboralsegseguridad@gmail.com</a></p>
+          <p><strong>WhatsApp:</strong> <a id="wsp-visible" href="#">+593 99 255 1380</a></p>
           <p><strong>Horario:</strong> Lun–Vie 09:00–18:00</p>
           <hr>
-          <p class="muted">¿Listo para cumplir con el MDT-196 y operar con seguridad? Estamos para ayudarte.</p>
+          <p class="muted">¿Listo para cumplir con la Normativa Ecuatoriana 🇪🇨 y operar con seguridad? Estamos para ayudarte.</p>
         </div>
       </div>
     </div>
@@ -308,7 +306,7 @@ footer{padding:26px 0;color:var(--gris-700)}
   <footer>
     <div class="container footer__grid">
       <div class="brand" aria-label="Laboral Seg">
-        <span class="brand__logo" aria-hidden="true"></span>
+        <img class="brand__logo" src="assets/logo.svg" alt="Logo de Laboral Seg" />
         <span class="brand__name">Laboral Seg</span>
       </div>
       <div>
@@ -332,7 +330,7 @@ footer{padding:26px 0;color:var(--gris-700)}
     const wspVisible = document.getElementById('wsp-visible');
 
     // ⚠️ Reemplaza por tu número en formato internacional sin + (Ecuador: 593xxxxxxxxx)
-    const WSP_NUMERO = wspBtn?.dataset.whatsapp || '593000000000';
+    const WSP_NUMERO = wspBtn?.dataset.whatsapp || '593992551380';
 
     const buildWspUrl = (numero, texto) => {
       const t = encodeURIComponent(texto || 'Hola, quiero más información.');
