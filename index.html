@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laboral Seg — Seguridad y Salud Ocupacional para Microempresas</title>
   <meta name="description" content="Cumple con la normativa de Seguridad y Salud Ocupacional (SSO) en Ecuador. Auditoría Express, planes para microempresas y acompañamiento integral." />
-
-  <!-- Favicon -->
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
 
-  <!-- Estilos -->
   <style>
 :root{
   --azul:#003366; --celeste:#00AEEF; --gris-100:#f6f7fb; --gris-200:#eef0f5;
@@ -62,6 +59,14 @@ nav a:hover{color:var(--azul)}
 .tag{display:inline-block;background:#e6f7ff;color:#026aa7;border:1px solid #bde9ff;padding:4px 10px;border-radius:999px;font-weight:700;font-size:.82rem}
 @media (max-width:980px){.hero__wrap{grid-template-columns:1fr}}
 
+/* Carousel */
+.carousel{position:relative;width:100%;max-height:420px;overflow:hidden;background:#fff;margin-top:-10px}
+.carousel__slide{display:none}
+.carousel__slide img{width:100%;height:420px;object-fit:cover;filter:brightness(.96)}
+.fade{animation:fade 1.4s}
+@keyframes fade{from{opacity:.4}to{opacity:1}}
+@media (max-width:640px){.carousel__slide img{height:260px}}
+
 /* Section */
 section{padding:56px 0}
 .section__head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}
@@ -85,12 +90,6 @@ blockquote{margin:0;padding:0;border:0}
 .testimonial{background:white;border:1px solid var(--gris-200);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
 .testimonial footer{margin-top:10px;color:var(--gris-700);font-weight:700}
 
-/* Contacto */
-.contact{background:linear-gradient(180deg,#fff,#f5fbff);border-top:1px solid var(--gris-200);border-bottom:1px solid var(--gris-200)}
-form{display:grid;gap:12px}
-input,textarea{width:100%;padding:12px 14px;border:1px solid var(--gris-400);border-radius:10px;font:inherit;background:#fff}
-textarea{min-height:120px;resize:vertical}
-
 /* Cumplimiento legal */
 .legal{background:#fff;border-top:1px solid var(--gris-200);border-bottom:1px solid var(--gris-200)}
 .legal__grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
@@ -100,7 +99,11 @@ textarea{min-height:120px;resize:vertical}
 @media (max-width:900px){.legal__grid{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.legal__grid{grid-template-columns:1fr}}
 
-/* Footer */
+/* Contacto + Footer */
+.contact{background:linear-gradient(180deg,#fff,#f5fbff);border-top:1px solid var(--gris-200);border-bottom:1px solid var(--gris-200)}
+form{display:grid;gap:12px}
+input,textarea{width:100%;padding:12px 14px;border:1px solid var(--gris-400);border-radius:10px;font:inherit;background:#fff}
+textarea{min-height:120px;resize:vertical}
 footer{padding:26px 0;color:var(--gris-700)}
 .footer__grid{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
@@ -121,6 +124,7 @@ footer{padding:26px 0;color:var(--gris-700)}
           <li><a href="#beneficios">Beneficios</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#cumplimiento">Cumplimiento</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -153,6 +157,19 @@ footer{padding:26px 0;color:var(--gris-700)}
         <div class="hero__bullet">💼 Planes para microempresa</div>
         <div class="hero__bullet">📊 Reporte claro con prioridades</div>
       </div>
+    </div>
+  </section>
+
+  <!-- ======= Carrusel (banners) ======= -->
+  <section class="carousel" aria-label="Promociones Laboral Seg">
+    <div class="carousel__slide fade">
+      <img src="assets/banner1.jpg" alt="Cumple con la normativa SSO — sin complicarte" />
+    </div>
+    <div class="carousel__slide fade">
+      <img src="assets/banner2.jpg" alt="Plan Básico Microempresa — seguridad que impulsa tu productividad" />
+    </div>
+    <div class="carousel__slide fade">
+      <img src="assets/banner3.jpg" alt="Auditoría Express — diagnóstico completo en 7 días" />
     </div>
   </section>
 
@@ -190,7 +207,7 @@ footer{padding:26px 0;color:var(--gris-700)}
           <h2>Planes y Servicios</h2>
           <p class="muted">Elige el plan que más se ajuste a tu operación.</p>
         </div>
-        <!-- (Se eliminó la pastilla 'Anexo 1 — Acuerdo MDT-196') -->
+        <!-- Pastilla eliminada -->
       </div>
 
       <div class="grid grid-3">
@@ -209,11 +226,11 @@ footer{padding:26px 0;color:var(--gris-700)}
           <h3>Plan Básico Microempresa</h3>
           <p class="muted">Implementa lo <strong>esencial</strong> para operar sin riesgos.</p>
           <ul class="list">
-            <li>Registro del <strong>Responsable de Seguridad</strong> avalado por el Ministerio de Trabajo según D.E. 255</li>
-            <li><strong>Plan de Prevención de Riesgos Laborales</strong> para empresas pequeñas (1-10 trabajadores)</li>
-            <li>Protocolo Interno de Prevención y Erradicación de la Discriminación, Violencia y Acoso Laboral</li>
-            <li>Identificación de peligros y evaluación de riesgos con <strong>Metodología OIT para PYMES</strong></li>
-            <li>Documentación básica actualizada según <strong>Anexo 1</strong>, regularización del <strong>SUT</strong> y seguimiento mensual.</li>
+            <li>Registro del <strong>responsable de seguridad</strong> avalado por el Ministerio de Trabajo según D.E. 255</li>
+            <li><strong>Plan de prevención de riesgos laborales</strong> para empresas pequeñas (1–10 trabajadores)</li>
+            <li>Protocolo interno de prevención y erradicación de la discriminación, violencia y acoso laboral</li>
+            <li>Identificación de peligros y evaluación de riesgos con <strong>metodología OIT para pymes</strong></li>
+            <li>Documentación básica actualizada según <strong>Anexo 1</strong>, regularización del <strong>SUT</strong> y seguimiento mensual</li>
           </ul>
           <p class="price">La prevención no es un gasto, es tu mejor inversión</p>
           <a class="btn" href="#contacto">Cotiza ahora</a>
@@ -240,39 +257,39 @@ footer{padding:26px 0;color:var(--gris-700)}
       <div class="section__head">
         <div>
           <h2>Cumplimiento legal que alcanzas</h2>
-          <p class="muted">Nuestros entregables y acciones se alinean con la normativa vigente en SSO.</p>
+          <p class="muted">Estos lineamientos **no son entregables**; son la base normativa que usamos para elaborar tus planes y la evaluación de riesgos.</p>
         </div>
       </div>
 
       <div class="legal__grid">
         <div class="legal__item">
           <h3>Decreto Ejecutivo 255</h3>
-          <p class="muted">Designación del <strong>Responsable de Seguridad</strong>, organización del sistema de gestión y obligaciones generales del empleador.</p>
+          <p class="muted">Obligaciones del empleador, organización del sistema de gestión y designación del responsable de seguridad.</p>
         </div>
 
         <div class="legal__item">
           <h3>Acuerdo Ministerial 2024-196</h3>
-          <p class="muted">Criterios de <strong>verificación</strong>, evidencias y <strong>formatos</strong> para auditorías e inspecciones del MDT.</p>
+          <p class="muted">Criterios de verificación, evidencias y formatos de inspección del MDT que utilizamos como marco de referencia.</p>
         </div>
 
         <div class="legal__item">
-          <h3>Anexo 1 — Requisitos mínimos</h3>
-          <p class="muted">Checklist base para micro y pequeñas empresas: documentación, capacitación, señalización, EPP y gestión de riesgos.</p>
+          <h3>Anexo 1 — Lista de verificación</h3>
+          <p class="muted">Lista de verificación de cumplimiento de obligaciones de seguridad y salud en el trabajo.</p>
         </div>
 
         <div class="legal__item">
-          <h3>Anexo 2 — Evidencias</h3>
-          <p class="muted">Listados y soportes requeridos: actas, registros, certificaciones, evaluaciones médicas y matrices actualizadas.</p>
+          <h3>Anexo 2 — Clasificación de riesgo</h3>
+          <p class="muted">Tabla de clasificación del nivel de riesgo de las actividades económicas en materia de seguridad y prevención.</p>
         </div>
 
         <div class="legal__item">
-          <h3>Anexo 3 — Verificación</h3>
-          <p class="muted">Criterios de evaluación y <strong>semáforo de cumplimiento</strong> para auditorías e inspecciones.</p>
+          <h3>Anexo 3 — Norma técnica</h3>
+          <p class="muted">Norma técnica en seguridad e higiene del trabajo que orienta los requisitos mínimos y buenas prácticas.</p>
         </div>
 
         <div class="legal__item">
-          <h3>¿Qué entregamos?</h3>
-          <p class="muted">Diagnóstico + plan de acción, protocolos internos, matriz de riesgos (OIT PYMES), evidencias organizadas y acompañamiento en SUT.</p>
+          <h3>¿Por qué la metodología de la OIT?</h3>
+          <p class="muted">El Ministerio de Trabajo recomienda utilizar la metodología de la OIT para la elaboración de planes de prevención en empresas de 1 a 10 trabajadores. La aplicamos porque es clara, proporcional al tamaño de la empresa y facilita evidencias verificables ante inspecciones.</p>
         </div>
       </div>
     </div>
@@ -347,7 +364,7 @@ footer{padding:26px 0;color:var(--gris-700)}
           <p><strong>WhatsApp:</strong> <a id="wsp-visible" href="#" target="_blank" rel="noopener">+593 99 255 1380</a></p>
           <p><strong>Horario:</strong> Lun–Vie 09:00–18:00</p>
           <hr>
-          <p class="muted">¿Listo para cumplir con la Normativa Ecuatoriana 🇪🇨 y operar con seguridad? Estamos para ayudarte.</p>
+          <p class="muted">¿Listo para cumplir con la normativa ecuatoriana 🇪🇨 y operar con seguridad? Estamos para ayudarte.</p>
         </div>
       </div>
     </div>
@@ -366,7 +383,6 @@ footer{padding:26px 0;color:var(--gris-700)}
     </div>
   </footer>
 
-  <!-- ======= JS ======= -->
   <script>
     // Menú móvil
     const btnMenu = document.getElementById('btn-menu');
@@ -376,11 +392,21 @@ footer{padding:26px 0;color:var(--gris-700)}
       btnMenu.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
+    // Carrusel automático
+    let slideIndex = 0;
+    const showSlides = () => {
+      const slides = document.getElementsByClassName('carousel__slide');
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = 'none';
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = 'block';
+      setTimeout(showSlides, 4000); // 4s
+    };
+    showSlides();
+
     // WhatsApp CTA
     const wspBtn = document.getElementById('cta-whatsapp');
     const wspVisible = document.getElementById('wsp-visible');
-
-    // Número fijo por data-attr o fallback
     const WSP_NUMERO = wspBtn?.dataset.whatsapp || '593992551380';
 
     const buildWspUrl = (numero, texto) => {
@@ -388,12 +414,10 @@ footer{padding:26px 0;color:var(--gris-700)}
       return `https://wa.me/${numero}?text=${t}`;
     };
 
-    if (wspBtn) {
-      wspBtn.href = buildWspUrl(WSP_NUMERO, wspBtn.dataset.msg);
-    }
+    if (wspBtn) wspBtn.href = buildWspUrl(WSP_NUMERO, wspBtn.dataset.msg);
     if (wspVisible) {
       wspVisible.href = buildWspUrl(WSP_NUMERO, 'Hola, deseo una cotización.');
-      // Si prefieres mantener espacios en el texto visible, comenta la línea siguiente:
+      // Si prefieres mantener el formato con espacios, comenta la línea siguiente:
       wspVisible.textContent = `+${WSP_NUMERO}`;
     }
 
@@ -407,7 +431,6 @@ footer{padding:26px 0;color:var(--gris-700)}
       const email = fd.get('email') || '';
       const telefono = fd.get('telefono') || '';
       const mensaje = fd.get('mensaje') || '';
-
       const texto = `Hola Laboral Seg,%0A%0A`+
         `Quiero información:%0A`+
         `• Nombre: ${nombre}%0A`+
@@ -415,7 +438,6 @@ footer{padding:26px 0;color:var(--gris-700)}
         `• Email: ${email}%0A`+
         `• Teléfono: ${telefono}%0A`+
         `• Mensaje: ${mensaje}`;
-
       window.open(buildWspUrl(WSP_NUMERO, decodeURIComponent(texto)), '_blank');
     });
   </script>
